@@ -48,6 +48,12 @@ class Usuario() {
     // El metodo comprobar edad  validara si la edad del usuario es igual o superior a 18.
     fun mayorEdad(edad: Int): Boolean = edad >= 18
 
+    fun vecesGanadas() {
+        cantidadAciertos++
+    }
 
+    override fun toString(): String {
+        return "Usuario(nombre='$nombre', Edad=$edad), CantidadAciertos=$cantidadAciertos"
+    }
 
 }
