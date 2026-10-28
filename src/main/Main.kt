@@ -83,7 +83,7 @@ fun jugar(generatorNumero: GeneratorNumero) {
     var numeroAcertado = false
 
     while (!numeroAcertado) {
-        print("Introduce un numero entre 1 y 100")
+        print("Introduce un numero entre 1 y 100 ")
         val numero =
             sc.nextLine().trim().toIntOrNull() // Al leer el numero como string realizamos una converción a entero
 
@@ -100,14 +100,14 @@ fun jugar(generatorNumero: GeneratorNumero) {
          * si acierta el numero mostramos el nombre con el que se registro y la cantidad de intentos**/
         when (generatorNumero.comprobarNumero(usuario, numero)) {
             tipoResultado.NO_PERMITIDO -> {
-                println("${ROJO}Se ha detectado que tu edad no cumple los requisios para jugar $RESET")
+                println("${ROJO}Se ha detectado que tu edad no cumple los requisios para jugar $RESET ")
                 return
             }
-            tipoResultado.FUERA_RANGO -> println("${ROJO} ERROR! te has salido del rango permitido $RESET")
-            tipoResultado.MAYOR -> println("El número secreto es menor")
-            tipoResultado.MENOR -> println("El número secreto es mayor")
+            tipoResultado.FUERA_RANGO -> println("${ROJO} ERROR! te has salido del rango permitido $RESET ")
+            tipoResultado.MAYOR -> println("El número secreto es menor ")
+            tipoResultado.MENOR -> println("El número secreto es mayor ")
             tipoResultado.IGUAL -> {
-                println("FELICIDAD! Has adivinado el número")
+                println("FELICIDAD! Has adivinado el número ")
                 println("${usuario.getNombre()},has adivinado el número  ${usuario.getCantidadIntentos()} intentos")
                 numeroAcertado = true
                 print("Hasta la proxima ${usuario.getNombre()}")
