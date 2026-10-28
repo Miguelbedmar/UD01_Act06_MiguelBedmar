@@ -1,6 +1,6 @@
 package modelo
 
-class Usuario {
+class Usuario(private val nombre:String,private val edad:Int) {
 
 
 
