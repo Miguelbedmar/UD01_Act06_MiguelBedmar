@@ -5,16 +5,16 @@ class Usuario() {
     //ATRIBUTOS
     private var nombre = ""
     private var edad = 0
-    private var cantidadAciertos = 0
+    private var cantidadIntentos = 0
 
     //Constructor
     constructor (
         nombre: String,
-        edad: Int, cantidadAciertos: Int
+        edad: Int, cantidadIntentos: Int
     ) : this() { // con this  indicamos a kotlin que este constructor pertenece a la clase Usuario
         this.nombre = nombre
         this.edad = edad
-        this.cantidadAciertos = cantidadAciertos
+        this.cantidadIntentos = cantidadIntentos
     }
 
     // METODOS GETTERS Y SETTES.
@@ -36,12 +36,12 @@ class Usuario() {
         this.edad = edad
     }
 
-    fun getCantidadAciertos(): Int {
-        return cantidadAciertos
+    fun getCantidadIntentos(): Int {
+        return cantidadIntentos
     }
 
-    fun setCantidadAciertos(cantidadAciertos: Int) {
-        this.cantidadAciertos = cantidadAciertos
+    fun setCantidadIntentos(cantidadIntentos: Int) {
+        this.cantidadIntentos = cantidadIntentos
     }
 
 
@@ -49,12 +49,12 @@ class Usuario() {
     fun mayorEdad(): Boolean = edad >= 18
 
     //Por cada acierto el contador subira
-    fun vecesGanadas() {
-        cantidadAciertos++
+    fun numeroIntentos() {
+        cantidadIntentos++
     }
 
     override fun toString(): String {
-        return "Usuario(nombre='$nombre', Edad=$edad), CantidadAciertos=$cantidadAciertos"
+        return "Usuario(nombre='$nombre', Edad=$edad), cantidadIntentos=$cantidadIntentos"
     }
 
 
