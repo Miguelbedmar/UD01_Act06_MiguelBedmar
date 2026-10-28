@@ -15,7 +15,7 @@ class GeneratorNumero() {
         if (!usuario.mayorEdad()) return tipoResultado.NO_PERMITIDO //Evitamos que personas menores de edad  puedan ingresar al programa
         if (numeroIntroducido !in 1..100) return tipoResultado.FUERA_RANGO // Le indicamos al usuario que  se ha salido de rango.
 
-        usuario.getCantidadIntentos() // Aumentamos contador
+        usuario.numeroIntentos() // Aumentamos contador
 
         return when { // Por medio de un when comprobamos los casos
             numeroIntroducido > numeroSecreto -> tipoResultado.MAYOR // En el caso de que el numero sea mayor

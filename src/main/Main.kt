@@ -110,7 +110,7 @@ fun jugar(generatorNumero: GeneratorNumero) {
                 println("FELICIDAD! Has adivinado el número")
                 println("${usuario.getNombre()},has adivinado el número  ${usuario.getCantidadIntentos()} intentos")
                 numeroAcertado = true
-
+                print("Hasta la proxima ${usuario.getNombre()}")
             }
         }
 
