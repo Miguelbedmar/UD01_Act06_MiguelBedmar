@@ -48,6 +48,7 @@ class Usuario() {
     // El metodo comprobar edad  validara si la edad del usuario es igual o superior a 18.
     fun mayorEdad(edad: Int): Boolean = edad >= 18
 
+    //Por cada acierto el contador subira
     fun vecesGanadas() {
         cantidadAciertos++
     }
