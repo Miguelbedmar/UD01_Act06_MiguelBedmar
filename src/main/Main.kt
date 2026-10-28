@@ -47,7 +47,7 @@ fun creacionUsuario() {
 
         } catch (e: NoSuchElementException) {
             print("${ROJO} ERROR!: Has salido fuera del fichero$RESET")
-            salir = true
+            salir = false
         } catch (e: IllegalAccessError) {
             print("${ROJO} ERROR! Valor introducido no válido$RESET")
         }
@@ -67,7 +67,7 @@ fun creacionUsuario() {
 
         } catch (e: NoSuchElementException) {
             println("${ROJO} ERROR!: Has salido fuera del fichero$RESET")
-            salir = true
+            salir = false
         } catch (e: IllegalAccessError) {
             println("${ROJO} ERROR! Valor introducido no válido$RESET")
 
@@ -83,14 +83,18 @@ fun jugar(generatorNumero: GeneratorNumero) {
     var numeroAcertado = false
 
     while (!numeroAcertado) {
-        print("Introduce un numero entre 1 y 100 ")
-        val numero =
-            sc.nextLine().trim().toIntOrNull() // Al leer el numero como string realizamos una converción a entero
+        try {
+            print("Introduce un numero entre 1 y 100 ")
+            val numero =
+                sc.nextLine().trim().toIntOrNull() // Al leer el numero como string realizamos una converción a entero
 
-        if (numero == null) {
-            println("${ROJO}ERROR!debes introducir un numero válido$RESET ")
-            continue
-        }
+            if (numero == null) {
+                println("${ROJO}ERROR!debes introducir un numero válido$RESET ")
+                continue
+            }
+
+
+
         /** Con el numero validado , comparamos el numero ingresado con el numero generado.
          * compruebo la edad del usuario
          * si el numero se encuentra fuera de rango
@@ -112,6 +116,13 @@ fun jugar(generatorNumero: GeneratorNumero) {
                 numeroAcertado = true
                 print("Hasta la proxima ${usuario.getNombre()}")
             }
+        }
+        }catch (e: IllegalAccessError    ){
+            println("${ROJO} ERROR! Valor introducido no válido$RESET")
+                break
+        }catch (e: NoSuchElementException){
+            println("${ROJO} ERROR!: Has salido fuera del fichero$RESET")
+            break
         }
 
 
